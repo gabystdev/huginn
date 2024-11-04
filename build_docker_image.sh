@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-: ${DOCKER_IMAGE:=huginn/huginn}
+: ${DOCKER_IMAGE:=gabystdev/huginn}
 : ${DOCKER_IMAGE_TAG:=${GITHUB_SHA:-$(git rev-parse HEAD)}}
 : ${DOCKERFILE:=docker/multi-process/Dockerfile}
 
@@ -16,5 +16,5 @@ if [[ "$1" == --push ]]; then
 fi
 
 if [[ "$DOCKER_IMAGE" == *huginn/huginn-single-process ]]; then
-  DOCKER_IMAGE=huginn/huginn-test DOCKERFILE=docker/test/Dockerfile ./build_docker_image.sh
+  DOCKER_IMAGE=gabystdev/huginn-test DOCKERFILE=docker/test/Dockerfile ./build_docker_image.sh
 fi
