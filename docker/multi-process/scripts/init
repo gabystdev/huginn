@@ -18,4 +18,4 @@ fi
 sed -i -e "s/\${IP-0.0.0.0}/$IP/" -e "s/\${PORT-3000}/$PORT/" /app/Procfile
 
 # start supervisord
-exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
